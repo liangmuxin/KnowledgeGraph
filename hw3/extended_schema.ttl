@@ -1,0 +1,46 @@
+@prefix schema: <http://schema.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+
+schema:Artwork a rdfs:Class ;
+    rdfs:label "Artwork" ;
+    rdfs:comment "The description of an artwork" ;
+    rdfs:subClassOf schema:CreativeWork .
+
+schema:artistUrl a rdf:Property ;
+    rdfs:label "artistUrl" ;
+    schema:domainIncludes schema:Artwork ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "url of an artist for an artwork" .
+
+schema:objectNumber a rdf:Property ;
+    rdfs:label "objectNumber" ;
+    schema:domainIncludes schema:Artwork ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "object numbers" .
+
+schema:produceTime a rdf:Property ;
+    rdfs:label "produceTime" ;
+    schema:domainIncludes schema:Artwork ;
+    schema:rangeIncludes schema:Text ;
+    rdfs:comment "When it was produced, probabaly not as common format" .
+
+schema:Artist a rdfs:Class ;
+    rdfs:label "Artist" ;
+    rdfs:comment "The description of an artist" ;
+    rdfs:subClassOf schema:Person .
+
+schema:birthYear a rdf:Property ;
+    rdfs:label "birthYear" ;
+    schema:domainIncludes schema:Artist ;
+    schema:rangeIncludes schema:Integer ;
+    rdfs:comment "Year of birth" .
+
+schema:deathYear a rdf:Property ;
+    rdfs:label "deathYear" ;
+    schema:domainIncludes schema:Artist ;
+    schema:rangeIncludes schema:Integer ;
+    rdfs:comment "Year of death" .
+
